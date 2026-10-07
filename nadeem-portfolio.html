@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nadeem Taj — Machine Learning Researcher and Lecturer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7f8;--surface:#ffffff;--ink:#16222b;--muted:#566873;--line:#d9e0e4;
+  --accent:#0b6b6f;--accent-ink:#ffffff;--mark:#e9f3f3;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Public Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#10181d;--surface:#17222a;--ink:#e6edf0;--muted:#9bb0ba;--line:#2a3a44;--accent:#5fc3c7;--accent-ink:#0b1519;--mark:#16303a}
+}
+:root[data-theme="dark"]{--bg:#10181d;--surface:#17222a;--ink:#e6edf0;--muted:#9bb0ba;--line:#2a3a44;--accent:#5fc3c7;--accent-ink:#0b1519;--mark:#16303a}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 16px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.shell{max-width:1120px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:64px}
+aside{position:sticky;top:0;align-self:start;padding:56px 0;height:100vh;display:flex;flex-direction:column}
+.avatar{width:96px;height:96px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font:600 34px var(--serif)}
+aside h1{font:600 26px/1.2 var(--serif);margin:20px 0 4px}
+aside .role{margin:0;color:var(--muted);font-size:14.5px}
+nav{margin-top:32px;display:flex;flex-direction:column;gap:2px}
+nav a{color:var(--ink);text-decoration:none;padding:6px 0 6px 14px;border-left:2px solid var(--line);font-size:15px}
+nav a:hover,nav a.on{border-left-color:var(--accent);color:var(--accent)}
+.side-foot{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:500 14px var(--sans);border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 12px;border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+main{padding:56px 0 96px}
+section{padding:0 0 56px;margin-bottom:56px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font:600 30px/1.2 var(--serif);margin:0 0 20px}
+h3{font:600 18px/1.35 var(--serif);margin:0}
+p{margin:0 0 14px;max-width:68ch}
+.lead{font:400 24px/1.45 var(--serif);max-width:34ch;margin-bottom:22px}
+.muted{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.chips li{background:var(--mark);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:14px}
+.themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.themes div{border-left:3px solid var(--accent);padding:2px 0 2px 16px}
+.themes p{font-size:15px;color:var(--muted);margin:6px 0 0}
+.pub{padding:20px 0;border-top:1px solid var(--line)}
+.pub .role-tag{font-size:12.5px;border:1px solid var(--line);border-radius:4px;padding:0 6px;color:var(--muted);margin-left:8px;white-space:nowrap;font-family:var(--sans);font-weight:400}
+.pub p.sum{font-size:15.5px;margin:8px 0 10px}
+details summary{cursor:pointer;color:var(--accent);font-size:14.5px}
+details ul{margin:10px 0 0;padding-left:20px;font-size:15px;color:var(--muted);max-width:68ch}
+details li{margin-bottom:6px}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin:6px 0 14px}
+.stats div{font-size:14px;color:var(--muted)}
+.stats b{display:block;font:600 28px var(--serif);color:var(--accent)}
+.sub{font:600 13.5px var(--sans);color:var(--muted);margin:28px 0 4px}
+.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 24px 8px}
+.tl li:before{content:"";position:absolute;left:-25px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.tl .when{font-size:14px;color:var(--muted)}
+.tl ul{margin:8px 0 0;padding-left:20px;font-size:15px;color:var(--muted);max-width:68ch}
+.tl ul li{padding:0;margin-bottom:4px}.tl ul li:before{display:none}
+.course{display:grid;grid-template-columns:200px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.cert{list-style:none;margin:0;padding:0}
+.cert li{padding:10px 0;border-top:1px solid var(--line)}
+.contact dl{display:grid;grid-template-columns:110px 1fr;gap:8px 12px;margin:0 0 20px}
+.contact dt{color:var(--muted)}.contact dd{margin:0}
+footer{font-size:14px;color:var(--muted)}
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr;gap:0}
+  aside{position:static;height:auto;padding:32px 0 8px}
+  nav{flex-direction:row;flex-wrap:wrap;gap:6px 14px}
+  nav a{border-left:0;border-bottom:2px solid var(--line);padding:4px 0}
+  .side-foot{margin-top:20px}
+  main{padding-top:32px}
+  .lead{font-size:21px}
+}
+@media (max-width:480px){.course,.contact dl{grid-template-columns:1fr;gap:2px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{aside nav,.side-foot{display:none}.shell{display:block}aside{position:static;height:auto}details{display:block}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside>
+  <div class="avatar" aria-hidden="true">NT</div>
+  <h1>Nadeem Taj</h1>
+  <p class="role">Lecturer, University of Gwadar<br>MS Computer Science, UET Lahore<br>Gwadar, Balochistan, Pakistan</p>
+  <nav aria-label="Sections">
+    <a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a>
+    <a href="#experience">Experience</a><a href="#teaching">Teaching</a>
+    <a href="#education">Education</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="side-foot">
+    <a class="btn primary" href="mailto:nadeemtaj407@gmail.com">Email me</a>
+    <button class="btn" id="theme" type="button">Toggle theme</button>
+  </div>
+</aside>
+
+<main>
+<section id="about">
+  <p class="lead">I build deep generative models for antibody design and teach machine learning to undergraduates in Gwadar.</p>
+  <p>I am a Lecturer at the University of Gwadar and a research collaborator with the Algorithmic Biology Lab. My research applies graph neural networks and generative models to biology and medical imaging, with a focus on designing antibodies that bind a chosen target.</p>
+  <p>I completed my MS in Computer Science at the University of Engineering and Technology (UET) Lahore, after a BS in Electrical Engineering funded by a four-year HEC Pakistan scholarship. I also worked as a STEM fellow with Science Fuse, helping students from different backgrounds enjoy science.</p>
+  <ul class="chips" aria-label="Interests">
+    <li>Generative models</li><li>Graph neural networks</li><li>Antibody design</li><li>Medical imaging</li><li>Machine learning education</li>
+  </ul>
+</section>
+
+<section id="research">
+  <h2>Research</h2>
+  <div class="themes">
+    <div><h3>Antibody design</h3><p>Deep generative models for CDR loop design and epitope-specific binding, using E(3)-equivariant graph neural networks on antibody–antigen interfaces.</p></div>
+    <div><h3>Benchmarks</h3><p>Standardized datasets and evaluation protocols, so that design methods can be compared fairly and tested on new targets.</p></div>
+    <div><h3>Medical imaging</h3><p>GANs and transfer learning for synthetic MRI generation and data augmentation, studied at the AI Research Lab, KICS.</p></div>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <article class="pub">
+    <h3>ChiMERa-Bench: Benchmark for Epitope-Specific Antibody Design<span class="role-tag">Co-author</span></h3>
+    <p class="sum">A unified benchmark for computational antibody design, built to fix inconsistent evaluation practices across the field.</p>
+    <div class="stats"><div><b>2,922</b>antibody–antigen complexes</div><div><b>3</b>generalization splits</div><div><b>10</b>metrics</div><div><b>11</b>models benchmarked</div></div>
+    <details><summary>Contributions</summary><ul>
+      <li>Curated a deduplicated dataset from SAbDab with epitope and paratope annotations; the largest of its kind for antibody CDR co-design, released publicly.</li>
+      <li>Designed three data splits (epitope-group, antigen-fold, temporal) with cluster-level leakage prevention.</li>
+      <li>Built a five-category evaluation protocol: sequence, structural, interface, epitope-specificity and designability, including new epitope precision, recall and F1 measures.</li>
+      <li>Benchmarked 11 state-of-the-art generative models under standardized conditions. Architectural inductive bias, not model scale, drove performance.</li>
+    </ul></details>
+  </article>
+  <article class="pub">
+    <h3>ConTact: Contact-First Antibody CDR Design via Explicit Interface Reasoning<span class="role-tag">Co-author</span></h3>
+    <p class="sum">An encoder-decoder that splits CDR design into contact prediction and contact-gated sequence generation.</p>
+    <div class="stats"><div><b>11–16%</b>better native-contact recovery</div><div><b>10</b>baselines beaten</div></div>
+    <details><summary>Contributions</summary><ul>
+      <li>Designed a three-stage cascaded decoder combining surface complementarity fingerprinting, supervised contact prediction and contact-gated antigen feature injection.</li>
+      <li>Introduced a distance-biased cross-attention module and a contact-weighted loss that focus learning on binding-critical residues.</li>
+      <li>Reached best-in-class RMSD, DockQ and epitope F1 across all evaluation splits against baselines spanning equivariant GNN, diffusion, flow-matching and autoregressive models.</li>
+      <li>Ran diagnostic ablations tracing sequence-recovery limits to backbone geometry constraints.</li>
+    </ul></details>
+  </article>
+  <p class="muted" style="margin-top:8px">Add venue, year and links for each paper once they are public.</p>
+</section>
+
+<section id="experience">
+  <h2>Research experience</h2>
+  <ul class="tl">
+    <li><div class="when">May 2025 – present · Remote</div><h3>Research Assistant, Algorithmic Biology Lab</h3>
+      <ul><li>Collaborate on deep generative modeling for antibody design and epitope-specific binding optimization.</li>
+      <li>Helped design and implement ConTact and supported the creation of ChiMERa-Bench.</li>
+      <li>Built data processing and graph-building pipelines in PyTorch Geometric to represent heterogeneous complex interfaces for E(3)-equivariant GNNs.</li></ul></li>
+    <li><div class="when">Sep 2024 – Dec 2024 · Lahore</div><h3>AI Research Intern, AIRL, KICS</h3>
+      <ul><li>Researched deep learning for medical imaging, exploring GANs and transfer learning.</li>
+      <li>Trained and evaluated GAN models for synthetic MRI generation and data augmentation.</li>
+      <li>Assisted with experimental design, quantitative performance analysis and documentation.</li></ul></li>
+  </ul>
+</section>
+
+<section id="teaching">
+  <h2>Teaching</h2>
+  <ul class="tl">
+    <li><div class="when">Sep 2025 – present · Gwadar</div><h3>Lecturer, University of Gwadar</h3>
+      <ul><li>Teach lectures and labs for Machine Learning, Deep Learning, Data Warehousing &amp; Business Intelligence, and Advanced Statistics.</li>
+      <li>Design syllabi, original lab workbooks and practical assessments using Python, PyTorch, TensorFlow, SQL and Stata.</li>
+      <li>Guide end-to-end student projects on neural networks, model optimization, ETL pipelines and statistical modeling, and hold office hours.</li></ul></li>
+    <li><div class="when">2024 – 2025 · Lahore</div><h3>Graduate Teaching Assistant, UET Lahore</h3>
+      <ul><li>Ran labs for Introduction to Data Science and Object-Oriented Programming.</li>
+      <li>Helped design lab exercises, grade programming assignments and conduct exams.</li></ul></li>
+    <li><div class="when">Apr 2023 – Dec 2023 · Lahore</div><h3>Science Communicator / STEM Fellow, Science Fuse</h3>
+      <ul><li>Selected for an eight-month fellowship promoting equitable STEM education across Pakistan.</li>
+      <li>Designed learning resources and co-led hands-on workshops for students from diverse backgrounds.</li></ul></li>
+    <li><div class="when">Aug 2021 – Jan 2022 · Lahore</div><h3>Teaching Assistant (BS), UET Lahore</h3>
+      <ul><li>Ran labs and graded coursework for Applied Probability and Statistics.</li></ul></li>
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul class="tl">
+    <li><div class="when">2024 – 2026</div><h3>MS in Computer Science</h3><p class="muted">University of Engineering and Technology Lahore</p></li>
+    <li><div class="when">2018 – 2022</div><h3>BS in Electrical Engineering</h3><p class="muted">University of Engineering and Technology Lahore. Fully funded four-year HEC Pakistan scholarship.</p>
+      <p class="muted">Coursework: Database Engineering, Operating Systems, Data Structures and Algorithms (C++), Computer Networks, Programming Fundamentals (Python), Linear Algebra.</p></li>
+  </ul>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <ul class="cert">
+    <li>Microsoft Certified: DevOps Engineer Expert (AZ-400)</li>
+    <li>Microsoft Certified: Azure Administrator Associate (AZ-104)</li>
+    <li>Google Data Analytics Professional Certificate</li>
+    <li>AI and Cybersecurity summer school, University of Turku</li>
+    <li>Machine Learning Specialization, Andrew Ng, DeepLearning.AI</li>
+  </ul>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <dl>
+    <dt>Email</dt><dd><a href="mailto:nadeemtaj407@gmail.com">nadeemtaj407@gmail.com</a></dd>
+    <dt>Location</dt><dd>Gwadar, Balochistan, Pakistan</dd>
+    <dt>Office hours</dt><dd>By appointment, University of Gwadar</dd>
+  </dl>
+  <p>I am happy to hear from students, collaborators and anyone working on generative models for biology.</p>
+  <a class="btn" href="#" onclick="window.print();return false;">Print or save as PDF</a>
+  <footer style="margin-top:20px">© 2026 Nadeem Taj</footer>
+</section>
+</main>
+</div>
+<script>
+document.getElementById('theme').addEventListener('click',()=>{
+  const r=document.documentElement,dark=getComputedStyle(r).getPropertyValue('--bg').trim()==='#10181d';
+  r.setAttribute('data-theme',dark?'light':'dark');
+});
+const links=[...document.querySelectorAll('nav a')],secs=links.map(a=>document.querySelector(a.hash));
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.hash==='#'+en.target.id))}}),{rootMargin:'-30% 0px -60% 0px'});
+secs.forEach(s=>s&&io.observe(s));
+</script>
+</body>
+</html>
